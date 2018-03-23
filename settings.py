@@ -1,4 +1,4 @@
-from models.Figures import *
+IMAGE_PATH = "./images/figures/"
 
 CANVAS_WIDTH = 1100
 CANVAS_HEIGHT = 600
