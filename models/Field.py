@@ -3,6 +3,7 @@ from models.Figures import Figure
 from settings import *
 from tkinter import *
 
+
 import tkinter
 
 tk = tkinter.Tk()
@@ -72,3 +73,6 @@ class Field:
         field[7][6] = Figures.black_peshka
 
         return field
+
+
+FIELD = Field.newGame()
