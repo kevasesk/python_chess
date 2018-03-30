@@ -13,7 +13,7 @@ def click_field(event):
     global tmp_figure
     global tmp_point
     point = getCell(event.x, event.y)
-    if 0 <= point['x'] < 8 and 0 <= point['y'] < 8:
+    if 0 <= point['x'] <= 7 and 0 <= point['y'] <= 7:
         if(tmp_figure != None and tmp_point != None): #we have active figure
             for avaliabe_move in tmp_figure.getAvaliableMoves(tmp_point, fieldModel.field): #check it moves
                 if avaliabe_move['x'] == point['x'] and avaliabe_move['y'] == point['y']:
