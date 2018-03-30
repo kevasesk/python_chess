@@ -14,6 +14,27 @@ class Horse(AbstractFigure):
             self.image = 'black_horse.png'
             self.name = 'horse'
 
-
     def getAvaliableMoves(self, point, field):
-        return []
+        moves = []
+
+        if self.checkMove(field, point['x'] - 1, point['y'] - 2):
+            moves.append({'x': point['x'] - 1, 'y': point['y'] - 2})
+        if self.checkMove(field, point['x'] + 1, point['y'] - 2):
+            moves.append({'x': point['x'] + 1, 'y': point['y'] - 2})
+
+        if self.checkMove(field, point['x'] - 2, point['y'] - 1):
+            moves.append({'x': point['x'] - 2, 'y': point['y'] - 1})
+        if self.checkMove(field, point['x'] + 2, point['y'] - 1):
+            moves.append({'x': point['x'] + 2, 'y': point['y'] - 1})
+
+        if self.checkMove(field, point['x'] - 2, point['y'] + 1):
+            moves.append({'x': point['x'] - 2, 'y': point['y'] + 1})
+        if self.checkMove(field, point['x'] + 2, point['y'] + 1):
+            moves.append({'x': point['x'] + 2, 'y': point['y'] + 1})
+
+        if self.checkMove(field, point['x'] - 1, point['y'] + 2):
+            moves.append({'x': point['x'] - 1, 'y': point['y'] + 2})
+        if self.checkMove(field, point['x'] + 1, point['y'] + 2):
+            moves.append({'x': point['x'] + 1, 'y': point['y'] + 2})
+
+        return moves
