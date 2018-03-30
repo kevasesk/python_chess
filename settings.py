@@ -1,4 +1,4 @@
-IMAGE_PATH = "./images/figures/"
+IMAGE_PATH = "./images/figures_old/"
 
 CANVAS_WIDTH = 1100
 CANVAS_HEIGHT = 600
@@ -6,5 +6,8 @@ CELL_SIZE = 50
 
 START_X = 50
 START_Y = 50
+
+WHITE = True
+BLACK = False
 
 
