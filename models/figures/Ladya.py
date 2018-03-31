@@ -20,9 +20,9 @@ class Ladya(AbstractFigure):
     def getAvaliableMoves(self, point, field):
         moves = []
 
-        moves += self.horizontal(point, field, self.TOP)
-        moves += self.horizontal(point, field, self.RIGHT)
-        moves += self.horizontal(point, field, self.BOTTOM)
-        moves += self.horizontal(point, field, self.LEFT)
+        moves += self.line(point, field, self.TOP)
+        moves += self.line(point, field, self.RIGHT)
+        moves += self.line(point, field, self.BOTTOM)
+        moves += self.line(point, field, self.LEFT)
 
         return moves

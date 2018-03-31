@@ -18,14 +18,14 @@ class Queen(AbstractFigure):
     def getAvaliableMoves(self, point, field):
         moves = []
 
-        moves += self.horizontal(point, field, self.TOP)
-        moves += self.horizontal(point, field, self.RIGHT)
-        moves += self.horizontal(point, field, self.BOTTOM)
-        moves += self.horizontal(point, field, self.LEFT)
+        moves += self.line(point, field, self.TOP)
+        moves += self.line(point, field, self.RIGHT)
+        moves += self.line(point, field, self.BOTTOM)
+        moves += self.line(point, field, self.LEFT)
 
-        moves += self.diagonal(point, field, self.TOP_LEFT)
-        moves += self.diagonal(point, field, self.TOP_RIGHT)
-        moves += self.diagonal(point, field, self.BOTTOM_LEFT)
-        moves += self.diagonal(point, field, self.BOTTOM_RIGHT)
+        moves += self.line(point, field, self.TOP_LEFT)
+        moves += self.line(point, field, self.TOP_RIGHT)
+        moves += self.line(point, field, self.BOTTOM_LEFT)
+        moves += self.line(point, field, self.BOTTOM_RIGHT)
 
         return moves

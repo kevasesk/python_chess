@@ -43,14 +43,8 @@ class Field:
         field[6][0] = Horse(WHITE)
         field[7][0] = Ladya(WHITE)
 
-        field[0][1] = Peshka(WHITE)
-        field[1][1] = Peshka(WHITE)
-        field[2][1] = Peshka(WHITE)
-        field[3][1] = Peshka(WHITE)
-        field[4][1] = Peshka(WHITE)
-        field[5][1] = Peshka(WHITE)
-        field[6][1] = Peshka(WHITE)
-        field[7][1] = Peshka(WHITE)
+        for i in range(0,8):
+            field[i][1] = Peshka(WHITE)
 
         field[0][7] = Ladya(BLACK)
         field[1][7] = Horse(BLACK)
@@ -61,13 +55,7 @@ class Field:
         field[6][7] = Horse(BLACK)
         field[7][7] = Ladya(BLACK)
 
-        field[0][6] = Peshka(BLACK)
-        field[1][6] = Peshka(BLACK)
-        field[2][6] = Peshka(BLACK)
-        field[3][6] = Peshka(BLACK)
-        field[4][6] = Peshka(BLACK)
-        field[5][6] = Peshka(BLACK)
-        field[6][6] = Peshka(BLACK)
-        field[7][6] = Peshka(BLACK)
+        for i in range(0,8):
+            field[i][6] = Peshka(BLACK)
 
         self.field = field
