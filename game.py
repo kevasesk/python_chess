@@ -26,6 +26,7 @@ def click_field(event):
             if isinstance(fieldModel.field[point['x']][point['y']], AbstractFigure): # if we click on figure
                 tmp_figure = fieldModel.field[point['x']][point['y']] # remember it and make it active
                 tmp_point = {'x': point['x'], 'y': point['y']}
+                print('aval moves:')
                 print(tmp_figure.getAvaliableMoves(tmp_point, fieldModel.field))
                 print(tmp_point)
             else: # we click on cell
