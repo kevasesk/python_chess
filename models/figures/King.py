@@ -16,4 +16,10 @@ class King(AbstractFigure):
 
 
     def getAvaliableMoves(self, point, field):
-        return []
+        moves = []
+        for psevdoX in range(point['x'] - 1, point['x'] + 2):
+            for psevdoY in range(point['y'] - 1, point['y'] + 2):
+                if self.checkMove(field, psevdoX, psevdoY):
+                    moves.append({'x': psevdoX, 'y': psevdoY})
+
+        return moves

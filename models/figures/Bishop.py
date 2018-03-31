@@ -3,6 +3,7 @@ from models.figures import AbstractFigure
 
 
 class Bishop(AbstractFigure):
+
     def __init__(self, color):
         super(Bishop, self).__init__(color)
         self.color = color
@@ -17,4 +18,11 @@ class Bishop(AbstractFigure):
 
 
     def getAvaliableMoves(self, point, field):
-        return []
+        moves = []
+
+        moves += self.diagonal(point, field, self.TOP_LEFT)
+        moves += self.diagonal(point, field, self.TOP_RIGHT)
+        moves += self.diagonal(point, field, self.BOTTOM_LEFT)
+        moves += self.diagonal(point, field, self.BOTTOM_RIGHT)
+
+        return moves

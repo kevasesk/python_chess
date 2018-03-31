@@ -2,6 +2,8 @@ from settings import *
 from models.figures import AbstractFigure
 
 class Ladya(AbstractFigure):
+
+
     def __init__(self, color):
         super(Ladya, self).__init__(color)
         self.color = color
@@ -16,4 +18,11 @@ class Ladya(AbstractFigure):
 
 
     def getAvaliableMoves(self, point, field):
-        return []
+        moves = []
+
+        moves += self.horizontal(point, field, self.TOP)
+        moves += self.horizontal(point, field, self.RIGHT)
+        moves += self.horizontal(point, field, self.BOTTOM)
+        moves += self.horizontal(point, field, self.LEFT)
+
+        return moves
