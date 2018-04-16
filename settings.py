@@ -1,3 +1,4 @@
+#common
 IMAGE_PATH = "./images/figures_old/"
 
 CANVAS_WIDTH = 600
@@ -10,4 +11,11 @@ START_Y = 10
 WHITE = True
 BLACK = False
 
+#background settings
+BACKGROUND_X1 = START_X + 3 * CELL_SIZE
+BACKGROUND_Y1 = START_Y + 3 * CELL_SIZE
+BACKGROUND_X2 = START_X + 5 * CELL_SIZE
+BACKGROUND_Y2 = START_Y + 5 * CELL_SIZE
+
+BACKGROUND_COLOR = 'green'
 

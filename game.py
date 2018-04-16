@@ -1,4 +1,5 @@
 from models.Field import *
+from models.Picker import Picker
 from tkinter import *
 import tkinter
 import math
@@ -11,6 +12,8 @@ def getCell(x, y):
 white_to_move = True
 transformFlag = False
 transformPoint = None
+
+#def transformAction()
 def click_field(event):
     global tmp_figure
     global tmp_point
@@ -21,6 +24,7 @@ def click_field(event):
     if transformFlag:
         print('tranc')
         point = getCell(event.x, event.y)
+
         if point['x'] == 3 and point['y'] == 3:
             fieldModel.field[transformPoint['x']][transformPoint['y']] = Ladya(WHITE)  # clear previous position
             tmp_figure = tmp_point = None  # we have no active figure
@@ -78,10 +82,10 @@ def click_field(event):
                                     fieldModel.field[avaliabe_move['x']][avaliabe_move['y'] - 1] = None
 
 
-                        if isinstance(tmp_figure, Peshka) and ( point['y'] == 7 or point['y'] == 0 ):
+                        if isinstance(tmp_figure, Peshka) and ( point['y'] == 2 or point['y'] == 0 ):
                             transformFlag = True
                             transformPoint = point
-                            transform(tmp_figure, point)
+                            drawPeshkaPicker(tmp_figure)
                             print('transform start')
 
                         # end move
@@ -116,25 +120,10 @@ def makeActive(point):
     print(tmp_point)
 
 
-def transform(tmp_figure, point):
-    images = []
-    CANVAS.create_rectangle(START_X + 3 * CELL_SIZE, START_Y + 3 * CELL_SIZE, START_X + 5 * CELL_SIZE, START_Y + 5 * CELL_SIZE, fill = 'green' )
-
-    image = Field.getImage(Ladya(WHITE))
-    images.append(image)
-    CANVAS.create_image((START_X + 3 * CELL_SIZE + CELL_SIZE / 2, START_Y + 3 * CELL_SIZE + CELL_SIZE / 2), image=image)
-
-    image = Field.getImage(Horse(WHITE))
-    images.append(image)
-    CANVAS.create_image((START_X + 4 * CELL_SIZE + CELL_SIZE / 2, START_Y + 3 * CELL_SIZE + CELL_SIZE / 2), image=image)
-
-    image = Field.getImage(Bishop(WHITE))
-    images.append(image)
-    CANVAS.create_image((START_X + 3 * CELL_SIZE + CELL_SIZE / 2, START_Y + 4 * CELL_SIZE + CELL_SIZE / 2), image=image)
-
-    image = Field.getImage(Queen(WHITE))
-    images.append(image)
-    CANVAS.create_image((START_X + 4 * CELL_SIZE + CELL_SIZE / 2, START_Y + 4 * CELL_SIZE + CELL_SIZE / 2), image=image)
+def drawPeshkaPicker(tmp_figure):
+    picker = Picker(CANVAS)
+    picker.drawSelecterBackground()
+    images = picker.drawPeshkaOptions(tmp_figure.color)
 
     mainloop()
 
@@ -149,6 +138,8 @@ CANVAS = canvas
 fieldModel = Field()
 Field.newGame(fieldModel)
 Field.drawField(fieldModel,fieldModel.field, tk, canvas)
+
+
 
 
 #TODO 1: improve transform peshka fuctionality (add for BLACK part)
